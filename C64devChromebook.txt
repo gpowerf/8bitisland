@@ -1,0 +1,95 @@
+Commodore BASIC development with a Chromebook (or Debian based distro)
+
+
+Step 1 Get Linux
+Enable Linux Beta: 
+
+
+1. Select Settings   .
+2. 'Linux (Beta)', click to Turn On.
+3. Follow the steps and wait.
+4. You will now have a terminal. 
+5. This is a good time to update Linux “apt-get update” followed by “apt-get upgrade”
+
+
+Step 2 Install Geany 
+Install Geany (or your favourite text editor or IDE)
+
+
+        sudo apt-get install geany
+
+
+Step 3: Install Vice
+
+
+Chrome OS’ Linux Beta is a Debian container, Debian is a massive stickler for freedom and you will notice that if you do “apt-cache search vice” it comes back with no results, it appears that the distribution doesn’t include vice, but it does, you just have to add the non-free sources. See Debian documentation: https://wiki.debian.org/SourcesList
+
+
+The entries in your sources.list file should look like: 
+
+
+deb http://deb.debian.org/debian buster main contrib non-free
+deb-src http://deb.debian.org/debian buster main contrib non-free
+
+
+After you have updated your sources are updated type: 
+
+
+        sudo apt-get update
+        sudo apt-get install vice
+
+
+This is where you will run into trouble again, Debian doesn’t include anything proprietary so Vice doesn’t work because it doesn’t include the proprietary files it needs to fully function. You will now have to download a working version of Vice to get the “non-free” files that are needed. 
+
+
+Download the Vice binaries for Windows and find the following files: 
+
+
+   * kernal
+   * basic
+   * chargen
+
+
+Copy these files to: 
+
+
+        /usr/lib/vice/C64
+
+
+NOTE: If you just want to play games and run C64 software it is easier to install the Vice flatpak from flathub as that works right away and includes all non-free files. Sadly I’ve not been able to get petcat to fully work on the flatpak via the CLI.
+
+
+Step 4: Start coding!
+
+
+Now you can code for the C64 using a modern editor or IDE on your Chromebook. 
+
+
+The basic workflow is:
+
+
+   1. Code on Geany (or any text editor)
+
+   2. Convert your ASCII code to PESCII as a .prg file using petcat (a tool that comes with Vice):
+
+petcat -w2 -o foo.prg -- foo.bas
+        
+        Or for Geany: 
+
+                petcat -w2 -o %e.prg -- %f 
+
+Useful link on tokenizing/de-tokenizing BASIC code using petcat: https://techtinkering.com/articles/tokenize-detokenize-commodore-basic-programs-using-petcat/
+
+      3.  The prg can be run on X64 (Vice):
+
+x64 -autostartprgmode 1 your_program.prg
+        
+        Or for Vice: 
+
+                x64 -autostartprgmode 1 %e.prg
+
+         4. Other useful tools that come with Vice: 
+
+C1541 - Utility to maintain and create disk images, this can be used to create a disk image with your prg file. 
+
+         5. Other tools to look into are BASIC compilers like Blitz wich will make your code run a lot faster, you can create a disk image with your .prg file and the compiler and then use Vice to compile your .prg file.
