@@ -287,7 +287,8 @@
 2530 if mb=1 and bk=1 and sc=0 and ((wd$(2)="bottle" and wd$(3)="with" and wd$(4)="key") or (wd$(2)="key" and wd$(3)="with" and wd$(4)="bottle")) then print "you have made a sculpture!":sc=1:rf=1
 2540 if ec=1 and wd$(2)="coffee" then print "you feel so awake! like you have super{sret}powers.":ec=0:pw=1:rf=1
 2550 if bg=1 and wd$(2)="burger" then print "yum! that's good!":bg=0:rf=1
-2560 if lc=2 and wd$(2)="c64" then print "maybe later after you buy warrior{sret}chicken.":rf=1 
+2560 if lc=2 and wd$(2)="c64" and wc=0 then print "maybe later after you buy warrior{sret}chicken.":rf=1
+2561 if lc=2 and wd$(2)="c64" and wc=1 then goto 9720
 2570 if lc=2 and (wd$(2)="2600" or wd$(2)="atari") then print "wow! that was fun! you should play the{sret}2600 more often.":rf=1 
 2580 if lc=2 and wd$(2)="tv" then print "you turn on the tv and then turn it off{sret}again. there's never anything to watch.{sret}games are much more fun.":rf=1
 2585 if lc=2 and wd$(2)="sofa" then print "you only sit there to play games.":rf=1
@@ -328,7 +329,7 @@
 7030 if lc=16 and wd$(2)="key" and bk=1 then print "{cyn}man:{grn}looks ok, but i've seen better{sret}sculptures than this. you can have $4.{sret}{sret}{cyn}you:{grn}ok! i'll take it!":mn=mn+4:bk=0:rv=1
 7040 if lc=16 and wd$(2)="bottle" and mb=1 then print "{cyn}man:{grn}where did you get that? that{sret}belongs to the milkman.{sret}{sret}{cyn}you:{grn}mmmm...yes, i'm just keeting it{sret}safe for him.":rv=1
 7050 if lc=16 and wd$(2)="sculpture" and sc=1 then print "{cyn}man:{grn}could it be? could this be the lost piero manzoni sculpture? you can have $200.00 for it!{sret}{sret}{cyn}you:{grn}i hoped i would get more. ok, i'll take $200, but you owe me a favour.":sc=2:mn=mn+200:rv=1
-7040 if rv=0 then print "{cyn}man:{grn}i don't want that.{sret}{sret}{cyn}you:{grn}fair enough."
+7060 if rv=0 then print "{cyn}man:{grn}i don't want that.{sret}{sret}{cyn}you:{grn}fair enough.":rv=1
 8000 return
 9000 rem ***ride the bus***
 9010 print "{clr}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{yel}you ride the bus..."
@@ -370,6 +371,7 @@
 9690 print "the troll is a fastrunner but so are you!, the troll tries{sret}to grab you and he just misses you.{sret}{sret}you barely get away.{sret}{sret}ending 7/7 (ok ending)":goto 9800
 9700 print "you wake up inside the bakery, then run{sret}towards the door and find that it is{sret}locked. you turn around to see if{sret}there’s another way out and you catch a{sret}glimpse of a clown.{sret}{sret}you die.{sret}{sret}secret (horrific ending)"
 9710 print "{sret}{sret}secret ending achieved!":goto 9800
+9720 print "you plug in your brand new copy of{sret}warrior chicken into your c64. the{sret}game is amazing! you play for hours{sret}and hours, completely forgetting about{sret}your lost freeze64 magazine.{sret}{sret}you have completed your quest!{sret}{sret}ending 8/8 (the gamer ending)":goto 9800
 9800 print "{sret}score:";:print int((mn/40)+cl+wl+bs+hb+mb+bk+tc+rk+bt+ss+ec+ty+wc+(fz*20)+vr+sw+sr+sb+sk+sl+bg+sc+pw+kn+bv)
 9810 print "[press any key]"
 9820 poke 198,0: wait 198,1
