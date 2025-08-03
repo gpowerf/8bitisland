@@ -71,7 +71,7 @@
 545 if hb=1 and wd$(2)="baguette" then print "a baguette, it is as hard as a bat!":vf=1
 550 if mb=1 and wd$(2)="bottle" and sc=0 then print "an empty milk bottle.":vf=1
 551 if mb=1 and wd$(2)="bottle" and sc=1 then print "the key is now stuck inside it.":vf=1
-551 if mb=1 and wd$(2)="bottle" and sc=2 then print "you sold the sculpture! the bottle is gone.":vf=1
+552 if mb=1 and wd$(2)="bottle" and sc=2 then print "you sold the sculpture! the bottle is gone.":vf=1
 553 if mb=0 and wb$(2)="bottle" and sb=1 and lc=6 then print "i guess the milkman forgot to take it.":vf=1
 555 if bk=1 and wd$(2)="key" and sc=0 then print "a bent key, looks fairly artistic.":vf=1
 556 if bk=1 and wd$(2)="key" and sc=1 then print "the key is stuck inside the bottle":vf=1
@@ -108,7 +108,7 @@
 680 if lc=4 and wd$(2)="key" and bk=0 and sk=1 then print "the key is in the lock, there's nothing{sret}special about it.":sk=1:vf=1
 685 if lc=4 and wd$(2)="key" and bk=1 then print "the door is locked.":vf=1
 690 if lc=6 and wd$(2)="convy" and wd$(3)="mart" and mb=0 then print "a convenience shop, there's a bottle on{sret}the ground. perhaps the milkman forgot{sret}to pick it up.":sb=1:vf=1
-690 if lc=6 and wd$(2)="convy" and wd$(3)="mart" and mb=1 then print "just a convenience shop.":vf=1
+691 if lc=6 and wd$(2)="convy" and wd$(3)="mart" and mb=1 then print "just a convenience shop.":vf=1
 692 if lc=6 and wd$(2)="house" then print "you can see your house from here, it{sret}is the only house on top of the cliff.":vf=1
 695 if (lc=7 or lc=13) and wd$(2)="bus" then print "it is old, dirty, and ugly. all buses{sret}are old, dirty and ugly at bit island.":vf=1
 700 if lc=9 and wd$(2)="woman" then print "she seems to work here, try talking to{sret}her.":vf=1
@@ -202,7 +202,6 @@
 1500 rem ***talk***
 1505 tf=0
 1510 if lc=9 and cl=1 then print "{cyn}you:{grn}did you deliver my freeze64 today?{sret}{sret}{cyn}woman:{grn}we have delivered all packages{sret}for today including your magazine.{sret}{sret}**perhaps your magazine was stolen!**":tf=1
-1510 if lc=9 and cl=0 then print "{cyn}you:{grn}did you deliver my freeze64 today?{sret}{sret}{cyn}woman:{grn}we have delivered all packages{sret}for today including your magazine, and{sret}put some clothes on!":tf=1
 1520 if lc=10 and cl=1 then print "{cyn}man:{grn}we sell sweets, trading cards,{sret}bubble gum, and magazines. and we are{sret}all out of bubble gum.":gosub 5060:tf=1
 1525 if lc=10 and cl=0 then print "{cyn}man:{grn}out in your pjs again?":tf=1
 1530 if lc=15 and cl=1 then print "{cyn}man:{grn}do you want to rent games of war?":tf=1:gosub 1600
@@ -304,8 +303,8 @@
 5010 print "{sret}{sret}{gry3}***price list***************************{grn}"
 5020 if rd=0 then print "* radio......................... $15.00"
 5030 if ss=0 and sl=1 then print "* slingshot...................... $7.00"
-5040 print "* big gun..................... $1100.00" 
-5040 print "* small gun.................... $300.00"
+5040 print "* big gun..................... $1100.00"
+5045 print "* small gun.................... $300.00"
 5050 return
 5060 print "{sret}{sret}{gry3}***price list***************************{grn}"
 5070 print "* trading cards................... $3.00* sweets.......................... $0.50"
@@ -350,8 +349,8 @@
 9155 if lc=20 and wd$(2)="troll" and wd$(3)="with" and wd$(4)="baguette" and hb=1 and wc=1 then goto 9650
 9160 if lc=20 and wd$(2)="troll" and wd$(3)="with" then print "you can't kill the troll with that.{sret}";:rv=1
 9170 if lc=20 and wd$(2)="surfer" then print "you'll only fight the surfer if he is a{sret}troll.":rv=1
-9180 if lc=20 and wd$(2)<>"surfer" and wd$(2)="troll" and wd$(3)<>"with" then print "you can't kill that.{sret}":rv=1 
-9190 if rv=0 then print "there's nothing to kill here." 
+9180 if lc<>20 then print "there's nothing to kill here.":rv=1
+9190 if rv=0 and wd$(2)<>"troll" and wd$(2)<>"surfer" then print "you can't kill that.":rv=1
 9500 return
 9600 print "you attack the troll bare handed and as{sret}soon as you do, you regret it. the{sret}troll is massive, he doesn't even{sret}attempt to block your punches, you hit{sret}him and he laughs! the troll hits you{sret}once and you die.{sret}{sret}ending 1/6 (bad ending)":goto 9800
 9610 print "you grab your trusty wooden slingshot,{sret}get ready to take aim and quickly{sret}realise that you have nothing to shoot{sret}at the troll. in a panic, you throw{sret}your slingshot at the troll and it{sret}bounces off his head. the troll rushes{sret}at you and hits you.";
@@ -393,7 +392,7 @@
 10130 if kn=3 and wd$(2)="door" then print "the baker leans out of the window.{sret}{sret}{cyn}baker:{grn}bloody hell kid! stop it now!!!"
 10140 if kn=4 and wd$(2)="door" then print "the baker leans out of the window with abaguette and throws it at you.{sret}thanfully,the baguette misses you and{sret}crashes into the ground cracking the{sret}pavement. {sret}{sret}{cyn}baker:{grn} bloody hell kid! stop it now!!!":bv=1
 10150 if kn>4 and wd$(2)="door" then print "the baker growls loudly from inside the bakery."
-10160 if kn>15 and wd$(2)="door" then goto 9680
+10160 if kn>15 and wd$(2)="door" then goto 9700
 10165 return
 11000 rem *** help ***
 11010 print "{clr}"
