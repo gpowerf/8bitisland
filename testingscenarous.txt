@@ -1,0 +1,122 @@
+
+8 BIT ISLAND - PLAYTEST CHECKLIST
+=================================
+
+Author: Guillermo Power
+Version: v0.9.3
+Format: Plain Text
+Use: Playtesting + GitHub upload
+
+==========================
+ENDING CHECKLIST (8 + 1)
+==========================
+1. BAD ENDING (1/8)
+   - Kill troll with bare hands - done
+
+2. BAD ENDING (2/8)
+   - Kill troll with slingshot (NO rocks) - done 
+
+3. BAD ENDING (3/8)
+   - Kill troll with slingshot + rock (NO game, NO coffee) - done 
+
+4. OK ENDING (4/8)
+   - Kill troll with slingshot + rock + game (NO coffee) - done
+   - Lose Warrior Chicken
+
+5. GOOD ENDING (5/8)
+   - Kill troll with baguette (NO Warrior Chicken)
+   - Recover Freeze64
+
+6. BEST ENDING? (6/8)
+   - Kill troll with baguette + Warrior Chicken
+   - Recover Freeze64 + have game to play
+
+7. OK ENDING (7/8)
+   - Kill troll with slingshot + rock + coffee (NO game)
+   - You survive
+
+8. GAMER ENDING (8/8)
+   - Use C64 while owning Warrior Chicken
+
+9. SECRET ENDING
+   - Knock on bakery door 15+ times
+   - Baguette thrown → unconscious → wake in bakery → clown → death
+
+==========================
+INVENTORY ITEM CHECKLIST
+==========================
+- WALLET: Pantry (lc=3), must see it first
+- BUS TICKET: Under fridge magnet (lc=3)
+- BAGUETTE: Knock repeatedly at bakery (lc=4)
+- MILK BOTTLE: On ground outside convymart (lc=6)
+- BENT KEY: Take from bakery door (lc=4)
+- TRADING CARDS: Buy for $3 at convymart (lc=10)
+- ROCKS: Pick up at mall entrance (lc=14)
+- BETAMAX TAPE: Rent from video store (if you have rental card)
+- SLINGSHOT: Buy for $7 at pawn shop (lc=16)
+- COFFEE: Buy for $2 at coffee shop (lc=17)
+- TOY: Comes with kiddy meal at burger shop (lc=18)
+- WARRIOR CHICKEN: Buy for $25 at Super Micro Mart (lc=19)
+- FREEZE64 MAGAZINE: Recovered in good/best ending
+- SCULPTURE: Use bent key with bottle
+- VIDEO RENTAL CARD: Found in wallet (open it)
+- RADIO: Buy at pawn shop (lc=16) for $15
+- BURGER: Buy for $4 at burger shop (lc=18)
+- MONEY: Start with $0, gain from:
+    - Wallet: $3
+    - Selling Toy: $2
+    - Selling Bent Key: $4
+    - Selling Sculpture: $200
+
+==========================
+SPECIAL INTERACTIONS
+==========================
+- OPEN wallet → gets card + $3
+- USE burger/coffee → consumed
+- USE bottle+key → make sculpture
+- SELL toy, key, sculpture
+- RENT tape → needs card
+- TALK to shopkeepers → reacts to PJs or outfit
+- KNOCK bakery door → unlocks secret ending
+- USE C64 → gamer ending if WC owned
+- USE fridge/cooker → fun flavor text
+
+==========================
+SUGGESTED TEST FLOWS
+==========================
+1. Warrior Chicken only (no Freeze64)
+2. Fight troll with no tools
+3. Fight troll with slingshot+rock (no game or coffee)
+4. Repeat with coffee, then with game
+5. Baguette-only route
+6. Everything: full inventory, optimal path
+7. Secret bakery knockout
+8. Play C64 with game = gamer ending
+
+==========================
+NOTES
+==========================
+- Use LOOK <item> and EXAMINE often
+- Some items require multiple words (e.g. "bus ticket")
+- Track `mn` (money) value carefully before purchases
+- Endings printed with score breakdown at end of game
+
+==========================
+NEGATIVE & EDGE CASE TESTING
+==========================
+- INSUFFICIENT FUNDS:
+  - Try to buy every item in the game without enough money.
+  - Verify "you don't have enough money" message appears.
+
+- STATE CONSISTENCY:
+  - After selling the sculpture, try to `look at bottle` and `look at key`.
+  - After selling the toy, try to `sell toy` again.
+  - After using the coffee/burger, check inventory and try to `use` them again.
+  - Try to `take` an item you already have in your inventory.
+
+- PARSER STRESS-TESTING:
+  - Use commands with filler words: "go to the north", "look at the bed".
+  - Use nonsensical but valid commands: "kill bed", "use north", "sell house".
+  - Verify the game responds with appropriate "I can't do that" messages.
+
+Happy adventuring!
