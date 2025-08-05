@@ -140,7 +140,7 @@
 800 if lc=19 and (wd$(2)="atari" or wd$(2)="ataris") then print "mmm... they look nice.":vf=1
 805 if lc=19 and (wd$(2)="spectrum" or wd$(2)="spectrums") then print "my friend billy has one of these.":vf=1
 810 if lc=19 and (wd$(2)="apple" or wd$(2)="apples" or wd$(2)="iie" or wd$(2)="iies") then print "looks like something an accountant{sret}would use.":vf=1
-815 if lc=19 and (wd$(2)="games" or (wd$(2)="warrior" and wd$(3)="chicken")) then print "you can see warrior chicken! the game{sret}you want. i should buy it.":vf=1
+815 if lc=19 and wc=0 and (wd$(2)="games" or (wd$(2)="warrior" and wd$(3)="chicken")) then print "you can see warrior chicken! the game{sret}you want. i should buy it.":vf=1
 817 if lc=19 and wd$(2)="micro" and wd$(3)="bill" then print "bill has the best job! he has a cool{sret}mullet and some people say he has many{sret}videogame world records.":vf=1
 820 if lc=20 and wd$(2)="surfer" or wd$(2)="troll" then print "that troll is huge!":vf=1
 830 if sc=1 and wd$(2)="sculpture" then print "this sculpture represents humanity's{sret}centering in the universality of our{sret}biological make-up and transcultural{sret}landscape; combining with the{sret}collective sense of the post-sublime.":vf=1
