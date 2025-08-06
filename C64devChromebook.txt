@@ -92,6 +92,7 @@ Other useful tools that come with Vice:
 
 	C1541 - Utility to maintain and create disk images, this can be used to create a disk image with your prg file. 
 
+	Eg: c1541 -format "MYDISK,01" d64 mydisk.d64 -attach mydisk.d64 -write yourfile.prg
 
 Other tools to look into are BASIC compilers like Blitz wich will make your code run a lot faster, you can create a disk image with your .prg file and the compiler and then use Vice to compile your .prg file. 
    

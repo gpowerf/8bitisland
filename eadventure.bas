@@ -4,7 +4,7 @@
 20 print "you wake up feeling excited, it is{sret}finally the day! the day that your{sret}freeze64 magazine arrives by mail.{sret}{sret}freeze64 is your favourite video game{sret}magazine. you are dying to read about{sret}warrior chicken, a new game";
 30 print " that{sret}everyone's been talking about. the{sret}game is released today.{sret}{sret}as you get out of bed, you notice a{sret}note left on your bedside table."
 40 print "{sret}type {yel}help{grn} for instructions (v0.9.3)"
-70 cl=0:wl=0:bs=0:hb=0:mb=0:bk=0:tc=0:rk=0:bt=0:ss=0:ec=0:ty=0:wc=0:fz=0:lc=1:vr=0:wf=1:mn=0:cf=0:sw=0:sr=0:sb=0:sk=0:sl=0:bg=0:sc=0:pw=0:kn=0:bv=0:rl=0
+70 cl=0:wl=0:bs=0:hb=0:mb=0:bk=0:tc=0:rk=0:bt=0:ss=0:ec=0:ty=0:wc=0:fz=0:lc=1:vr=0:wf=1:mn=0:cf=0:sw=0:sr=0:sb=0:sk=0:sl=0:bg=0:sc=0:pw=0:kn=0:bv=0:rl=0:rd=0
 72 dim l%(20,4):l%(1,4)=3:l%(2,1)=3:l%(2,2)=6:l%(3,2)=2:l%(3,3)=1:l%(4,4)=5:l%(5,2)=9:l%(5,3)=4:l%(5,4)=6:l%(6,1)=2:l%(6,2)=10:l%(6,3)=5:l%(6,4)=7:l%(7,3)=6:l%(7,4)=13:l%(9,1)=5:l%(10,1)=6
 73 l%(11,2)=16:l%(11,4)=12:l%(12,2)=15:l%(12,3)=11:l%(12,4)=13:l%(13,2)=14:l%(13,3)=12:l%(13,4)=7:l%(14,1)=13:l%(14,2)=17:l%(15,1)=12:l%(16,1)=11:l%(17,1)=14:l%(17,2)=18:l%(18,1)=17:l%(18,2)=19:l%(19,1)=18:l%(19,2)=20:l%(20,1)=19
 80 rem ***main loop***
@@ -25,6 +25,8 @@
 175 if wd$(1)="close" then gosub 1300:lf=1
 180 if wd$(1)="sell" then gosub 7000:lf=1
 182 if wd$(1)="help" then gosub 11000:lf=1
+183 if wd$(1)="save" then gosub 12000:lf=1
+184 if wd$(1)="load" then gosub 12100:lf=1
 185 if lf=0 then print "sorry i don't understand."
 195 goto 80
 200 rem ***word separator***
@@ -407,7 +409,24 @@
 11060 print "{sret}{lgrn}complex sentences:{grn}the game's natural{sret}language processing logic running on{sret}the mighty c64 is capable of{sret}understanding more. for example:"
 11070 print "{sret}look at the window{sret}"
 11080 print "{sret}{lgrn}goal:{grn}this game has multiple endings,{sret}try to find them all.{sret}"
-11500 return
+11500 return 
+12000 rem *** save game ***
+12010 print "saving game... please wait."
+12020 open 1,8,2,"@0:8bit.sav,s,w"
+12025 if st<>0 then open 15,8,15:input#15,en,em$,et,es:close 15:print "{red}disk error: ";em$:close 1:return
+12030 print#1,cl:print#1,wl:print#1,bs:print#1,hb:print#1,mb:print#1,bk:print#1,tc:print#1,rk:print#1,bt:print#1,ss:print#1,ec:print#1,ty:print#1,wc:print#1,fz:print#1,lc:print#1,vr:print#1,wf:print#1,mn:print#1,cf:print#1,sw:print#1,sr:print#1,sb:print#1,sk:print#1,sl:print#1,bg:print#1,sc:print#1,pw:print#1,kn:print#1,bv:print#1,rl:print#1,rd
+12040 close 1
+12050 print "game saved."
+12060 return
+12100 rem *** load game ***
+12110 print "loading game... please wait."
+12120 open 1,8,2,"0:8bit.sav,s,r"
+12130 if st<>0 then open 15,8,15:input#15,en,em$,et,es:close 15:print "{red}disk error: ";em$:close 1:return
+12140 input#1,cl:input#1,wl:input#1,bs:input#1,hb:input#1,mb:input#1,bk:input#1,tc:input#1,rk:input#1,bt:input#1,ss:input#1,ec:input#1,ty:input#1,wc:input#1,fz:input#1,lc:input#1,vr:input#1,wf:input#1,mn:input#1,cf:input#1,sw:input#1,sr:input#1,sb:input#1,sk:input#1,sl:input#1,bg:input#1,sc:input#1,pw:input#1,kn:input#1,bv:input#1,rl:input#1,rd
+12150 close 1
+12160 print "game loaded."
+12170 print "{clr}":gosub 900
+12180 return
 20000 poke 53280,14:poke 53281,6:print "{clr}{sret}{lblu}thank you for playing":end
 
 
