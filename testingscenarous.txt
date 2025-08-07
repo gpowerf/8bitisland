@@ -36,11 +36,11 @@ ENDING CHECKLIST (8 + 1)
    - You survive
 
 8. GAMER ENDING (8/8)
-   - Use C64 while owning Warrior Chicken
+   - Use C64 while owning Warrior Chicken -done 
 
 9. SECRET ENDING
    - Knock on bakery door 15+ times
-   - Baguette thrown → unconscious → wake in bakery → clown → death
+   - Baguette thrown → unconscious → wake in bakery → clown → death - done
 
 ==========================
 INVENTORY ITEM CHECKLIST

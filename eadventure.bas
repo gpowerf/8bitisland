@@ -413,20 +413,29 @@
 12000 rem *** save game ***
 12010 print "saving game... please wait."
 12020 open 1,8,2,"@0:8bit.sav,s,w"
-12025 if st<>0 then open 15,8,15:input#15,en,em$,et,es:close 15:print "{red}disk error: ";em$:close 1:return
+12025 if st<>0 then gosub 13000:return
 12030 print#1,cl:print#1,wl:print#1,bs:print#1,hb:print#1,mb:print#1,bk:print#1,tc:print#1,rk:print#1,bt:print#1,ss:print#1,ec:print#1,ty:print#1,wc:print#1,fz:print#1,lc:print#1,vr:print#1,wf:print#1,mn:print#1,cf:print#1,sw:print#1,sr:print#1,sb:print#1,sk:print#1,sl:print#1,bg:print#1,sc:print#1,pw:print#1,kn:print#1,bv:print#1,rl:print#1,rd
 12040 close 1
-12050 print "game saved."
+12045 if st<>0 then gosub 13000:return
+12050 print "game saved successfully."
 12060 return
 12100 rem *** load game ***
 12110 print "loading game... please wait."
 12120 open 1,8,2,"0:8bit.sav,s,r"
-12130 if st<>0 then open 15,8,15:input#15,en,em$,et,es:close 15:print "{red}disk error: ";em$:close 1:return
+12130 if st<>0 then gosub 13000:return
 12140 input#1,cl:input#1,wl:input#1,bs:input#1,hb:input#1,mb:input#1,bk:input#1,tc:input#1,rk:input#1,bt:input#1,ss:input#1,ec:input#1,ty:input#1,wc:input#1,fz:input#1,lc:input#1,vr:input#1,wf:input#1,mn:input#1,cf:input#1,sw:input#1,sr:input#1,sb:input#1,sk:input#1,sl:input#1,bg:input#1,sc:input#1,pw:input#1,kn:input#1,bv:input#1,rl:input#1,rd
+12145 if st<>0 then print"{red}error reading save file!":gosub 13000:return
 12150 close 1
 12160 print "game loaded."
 12170 print "{clr}":gosub 900
 12180 return
+13000 rem *** disk error handler ***
+13010 open 15,8,15,"i"
+13020 input#15,en,em$,et,es
+13030 close 15
+13040 print "{red}disk error: ";em$
+13050 close 1 : rem attempt to close the data channel
+13060 return
 20000 poke 53280,14:poke 53281,6:print "{clr}{sret}{lblu}thank you for playing":end
 
 
