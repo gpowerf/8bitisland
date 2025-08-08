@@ -134,8 +134,8 @@
 766 if lc=16 and rd=0 and wd$(2)="junk" then print "there's a radio amonst the useless{sret}junk.":rl=1:vf=1
 767 if lc=16 and rd=1 and wd$(2)="junk" then print "it is just junk.":vf=1
 770 if lc=17 and wd$(2)="coffee" then print "you've heard the coffee here is strong.":vf=1
-775 if bc=1 and wd$(2)="burger" then print "it looks huge! it is dripping with fat{sret}and sauce! yum!":vf=1
-780 if lc=18 and bc=0 and (wd$(2)="burgers" or wd$(2)="burger") then print "they look big, fat, and juicy!":vf=1
+775 if bg=1 and wd$(2)="burger" then print "it looks huge! it is dripping with fat{sret}and sauce! yum!":vf=1
+780 if lc=18 and bg=0 and (wd$(2)="burgers" or wd$(2)="burger") then print "they look big, fat, and juicy!":vf=1
 785 if lc=18 and wd$(2)="kiddy" and (wd$(3)="meal" or wd$(2)="meals") then print "maybe they come with a toy!":vf=1
 790 if lc=19 and wd$(2)="computers" then print "c64s, zx spectrums, apple iies, atari 8{sret}bits! just about everything other than{sret}amstrad cpcs.":vf=1
 795 if lc=19 and (wd$(2)="c64" or wd$(2)="c64s") then print "oh my god! they are beautiful.":vf=1 

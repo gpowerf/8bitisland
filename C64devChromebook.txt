@@ -47,11 +47,11 @@ Download the Vice binaries for Windows and find the following files:
 
 Copy these files to: 
 
-        /usr/lib/vice/C64
+		/usr/share/vice/C64/
         
 You will also need all the drive roms, get this from the DRIVES folder in the Windows version of vice and copy to:
 
-		/usr/lib/vice/DRIVES/
+		/usr/share/vice/DRIVES/
 
 
 NOTE: If you just want to play games and run C64 software it is easier to install the Vice flatpak from flathub as that works right away and includes all non-free files. Sadly I’ve not been able to get petcat to fully work on the flatpak via the CLI.
@@ -93,6 +93,29 @@ Other useful tools that come with Vice:
 	C1541 - Utility to maintain and create disk images, this can be used to create a disk image with your prg file. 
 
 	Eg: c1541 -format "MYDISK,01" d64 mydisk.d64 -attach mydisk.d64 -write yourfile.prg
+
+Exact commands to run: 
+
+1) Create a new, blank disk image with a name and disk ID:
+
+c1541 -format "MYDISK,01" d64 mydisk.d64
+
+2) Write your program file to the new disk image:
+
+c1541 mydisk.d64 -write eadventure.prg eadventure.prg,prg
+
+2.5) You can optionally list the contents of the disk to verify it:
+
+c1541 mydisk.d64 -list
+
+3) run the game with disk
+x64sc -8 "mydisk.d64"
+ 
+ or with autostart
+
+ x64sc -8 "mydisk.d64" -autostart "mydisk.d64:EADVENTURE"
+
+
 
 Other tools to look into are BASIC compilers like Blitz wich will make your code run a lot faster, you can create a disk image with your .prg file and the compiler and then use Vice to compile your .prg file. 
    
