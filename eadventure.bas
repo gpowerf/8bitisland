@@ -134,7 +134,7 @@
 766 if lc=16 and rd=0 and wd$(2)="junk" then print "there's a radio amonst the useless{sret}junk.":rl=1:vf=1
 767 if lc=16 and rd=1 and wd$(2)="junk" then print "it is just junk.":vf=1
 770 if lc=17 and wd$(2)="coffee" then print "you've heard the coffee here is strong.":vf=1
-775 if bg=1 and wd$(2)="burger" then print "it looks huge! it is dripping with fat{sret}and sauce! yum!":vf=1
+775 if bg=1 and wd$(2)="burger" then print "it's a big burger in a cardboard box.{sret}it's still a bit warm.":vf=1
 780 if lc=18 and bg=0 and (wd$(2)="burgers" or wd$(2)="burger") then print "they look big, fat, and juicy!":vf=1
 785 if lc=18 and wd$(2)="kiddy" and (wd$(3)="meal" or wd$(2)="meals") then print "maybe they come with a toy!":vf=1
 790 if lc=19 and wd$(2)="computers" then print "c64s, zx spectrums, apple iies, atari 8{sret}bits! just about everything other than{sret}amstrad cpcs.":vf=1
@@ -154,17 +154,17 @@
 905 print "you are in your bedroom, you can see{sret}your closet, bed, bedside table, and{sret}window.":gosub 6200:return 
 910 print "you are in your small livingroom, there{sret}are videogame posters on the walls. you{sret}can see your 14 inch tv and your comfy{sret}soft sofa, under the tv, there's a c64{sret}and a 2600.":gosub 6200:return
 915 print "you are standing in your kitchen.{sret}there's a fridge, a cooker, and an{sret}open pantry here.":gosub 6200:return
-920 print "you are standing infront of a bakery.{sret}the door is closed.":gosub 6200:return
-925 print "you are standing infront of the bit{sret}island postal service, to enter{sret}go south.":gosub 6200:return
-930 print "you are outside at the side of the road.{sret}behind you to the north is your house,{sret}infront of you to the south is the convymart, there are more shops along this{sret}road.":gosub 6200:return
-935 print "you are at the bus stop, the bus{sret}leaving to the mall is infront of you.{sret}to board the bus, walk east.":gosub 6200:return
+920 print "you are standing in front of a bakery.{sret}the door is closed.":gosub 6200:return
+925 print "you are standing in front of the bit{sret}island postal service, to enter{sret}go south.":gosub 6200:return
+930 print "you are outside at the side of the road.{sret}behind you to the north is your house,{sret}in front of you to the south is the{sret}convy mart, there are more shops along{sret}this road.":gosub 6200:return
+935 print "you are at the bus stop, the bus{sret}leaving to the mall is in front of you.{sret}to board the bus, walk east.":gosub 6200:return
 940 print "you are tided up inside the bakery, the{sret}baker has an ax and is dressed like a{sret}clown.":return
 945 print "you are in the postal service office. a{sret}woman stands behind the counter.":gosub 6200:return
 950 print "you are in the convy mart, magazines,{sret}bubble gum, sweets, and trading{sret}cards are sold here. a man stands{sret}behind the counter.":gosub 6200:return
-955 print "you are standing infront of the local{sret}pawn shop, there are rumours that all{sret}sorts of weapons can be bought here.{sret}walk south to enter the pawn shop.":gosub 6200:return
-960 print "you are standing infront of the video{sret}rental store, to enter the store, walk{sret}south.":gosub 6200:return
-965 print "you are at the bus stop, the bus{sret}infront of you goes back to your house.{sret}{sret}to take the bus, walk east.":gosub 6200:return
-970 print "you are standing infront of your local{sret}mall, your hangout, where you feel most{sret}comfortable. on the ground, you can see{sret}some rocks. to enter the mall, walk{sret}south.":gosub 6200:return
+955 print "you are standing in front of the local{sret}pawn shop, there are rumours that all{sret}sorts of weapons can be bought here.{sret}walk south to enter the pawn shop.":gosub 6200:return
+960 print "you are standing in front of the video{sret}rental store, to enter the store, walk{sret}south.":gosub 6200:return
+965 print "you are at the bus stop, the bus{sret}in front of you goes back to your house.{sret}{sret}to take the bus, walk east.":gosub 6200:return
+970 print "you are standing in front of your local{sret}mall, your hangout, where you feel most{sret}comfortable. on the ground, you can see{sret}some rocks. to enter the mall, walk{sret}south.":gosub 6200:return
 975 print "you are inside the video rental store,{sret}here in bit island, you only get{sret}betamax.all the walls are covered with{sret}betamax tapes! a man stands behind the{sret}counter.":gosub 6200:return
 980 print "you are inside the pawn shop, you see a{sret}huge pile of junk, everything else{sret}appears to be guns! there's a big bald{sret}man behind the counter.":gosub 6200:return
 985 print "you are in mega cafe, you can buy extra{sret}strong coffee here.{sret}{sret}{gry3}***price list***************************{grn}* coffee ......................... $2.00":gosub 6200:return
