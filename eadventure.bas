@@ -5,6 +5,7 @@
 30 print " that{sret}everyone's been talking about. the{sret}game is released today.{sret}{sret}as you get out of bed, you notice a{sret}note left on your bedside table."
 40 print "{sret}type {yel}help{grn} for instructions (v0.9.3)"
 70 cl=0:wl=0:bs=0:hb=0:mb=0:bk=0:tc=0:rk=0:bt=0:ss=0:ec=0:ty=0:wc=0:fz=0:lc=1:vr=0:wf=1:mn=0:cf=0:sw=0:sr=0:sb=0:sk=0:sl=0:bg=0:sc=0:pw=0:kn=0:bv=0:rl=0:rd=0
+71 dim wd$(10)
 72 dim l%(20,4):l%(1,4)=3:l%(2,1)=3:l%(2,2)=6:l%(3,2)=2:l%(3,3)=1:l%(4,4)=5:l%(5,2)=9:l%(5,3)=4:l%(5,4)=6:l%(6,1)=2:l%(6,2)=10:l%(6,3)=5:l%(6,4)=7:l%(7,3)=6:l%(7,4)=13:l%(9,1)=5:l%(10,1)=6
 73 l%(11,2)=16:l%(11,4)=12:l%(12,2)=15:l%(12,3)=11:l%(12,4)=13:l%(13,2)=14:l%(13,3)=12:l%(13,4)=7:l%(14,1)=13:l%(14,2)=17:l%(15,1)=12:l%(16,1)=11:l%(17,1)=14:l%(17,2)=18:l%(18,1)=17:l%(18,2)=19:l%(19,1)=18:l%(19,2)=20:l%(20,1)=19
 80 rem ***main loop***
@@ -130,13 +131,13 @@
 755 if lc=16 and wd$(2)="guns" and ss=0 then print "you can see a slingshot amongst the{sret}guns.":sl=1:vf=1
 756 if lc=16 and wd$(2)="guns" and ss=1 then print "they are just guns.":sl=1:vf=1
 760 if lc=16 and wd$(2)="man" then print "he's big, bald, and looks grumpy.":vf=1
-765 if lc=16 and wd$(2)="slingshot" then print "a wooden slingshot, it looks powerfull.":vf=1
+765 if lc=16 and wd$(2)="slingshot" then print "a wooden slingshot, it looks powerful.":vf=1
 766 if lc=16 and rd=0 and wd$(2)="junk" then print "there's a radio amonst the useless{sret}junk.":rl=1:vf=1
 767 if lc=16 and rd=1 and wd$(2)="junk" then print "it is just junk.":vf=1
 770 if lc=17 and wd$(2)="coffee" then print "you've heard the coffee here is strong.":vf=1
 775 if bg=1 and wd$(2)="burger" then print "it's a big burger in a cardboard box.{sret}it's still a bit warm.":vf=1
 780 if lc=18 and bg=0 and (wd$(2)="burgers" or wd$(2)="burger") then print "they look big, fat, and juicy!":vf=1
-785 if lc=18 and wd$(2)="kiddy" and (wd$(3)="meal" or wd$(2)="meals") then print "maybe they come with a toy!":vf=1
+785 if lc=18 and wd$(2)="kiddy" and (wd$(3)="meal" or wd$(3)="meals") then print "maybe they come with a toy!":vf=1
 790 if lc=19 and wd$(2)="computers" then print "c64s, zx spectrums, apple iies, atari 8{sret}bits! just about everything other than{sret}amstrad cpcs.":vf=1
 795 if lc=19 and (wd$(2)="c64" or wd$(2)="c64s") then print "oh my god! they are beautiful.":vf=1 
 800 if lc=19 and (wd$(2)="atari" or wd$(2)="ataris") then print "mmm... they look nice.":vf=1
@@ -144,7 +145,7 @@
 810 if lc=19 and (wd$(2)="apple" or wd$(2)="apples" or wd$(2)="iie" or wd$(2)="iies") then print "looks like something an accountant{sret}would use.":vf=1
 815 if lc=19 and wc=0 and (wd$(2)="games" or (wd$(2)="warrior" and wd$(3)="chicken")) then print "you can see warrior chicken! the game{sret}you want. i should buy it.":vf=1
 817 if lc=19 and wd$(2)="micro" and wd$(3)="bill" then print "bill has the best job! he has a cool{sret}mullet and some people say he has many{sret}videogame world records.":vf=1
-820 if lc=20 and wd$(2)="surfer" or wd$(2)="troll" then print "that troll is huge!":vf=1
+820 if lc=20 and (wd$(2)="surfer" or wd$(2)="troll") then print "that troll is huge!":vf=1
 830 if sc=1 and wd$(2)="sculpture" then print "this sculpture represents humanity's{sret}centering in the universality of our{sret}biological make-up and transcultural{sret}landscape; combining with the{sret}collective sense of the post-sublime.":vf=1
 840 if (lc=10 or lc=15 or lc=16) and wd$(2)="counter" then print "it is a glass and metal counter.":vf=1
 898 if vf=0 then print "what about it?"
@@ -158,14 +159,14 @@
 925 print "you are standing in front of the bit{sret}island postal service, to enter{sret}go south.":gosub 6200:return
 930 print "you are outside at the side of the road.{sret}behind you to the north is your house,{sret}in front of you to the south is the{sret}convy mart, there are more shops along{sret}this road.":gosub 6200:return
 935 print "you are at the bus stop, the bus{sret}leaving to the mall is in front of you.{sret}to board the bus, walk east.":gosub 6200:return
-940 print "you are tided up inside the bakery, the{sret}baker has an ax and is dressed like a{sret}clown.":return
+940 print "you are tied up inside the bakery, the{sret}baker has an ax and is dressed like a{sret}clown.":return
 945 print "you are in the postal service office. a{sret}woman stands behind the counter.":gosub 6200:return
 950 print "you are in the convy mart, magazines,{sret}bubble gum, sweets, and trading{sret}cards are sold here. a man stands{sret}behind the counter.":gosub 6200:return
 955 print "you are standing in front of the local{sret}pawn shop, there are rumours that all{sret}sorts of weapons can be bought here.{sret}walk south to enter the pawn shop.":gosub 6200:return
 960 print "you are standing in front of the video{sret}rental store, to enter the store, walk{sret}south.":gosub 6200:return
 965 print "you are at the bus stop, the bus{sret}in front of you goes back to your house.{sret}{sret}to take the bus, walk east.":gosub 6200:return
 970 print "you are standing in front of your local{sret}mall, your hangout, where you feel most{sret}comfortable. on the ground, you can see{sret}some rocks. to enter the mall, walk{sret}south.":gosub 6200:return
-975 print "you are inside the video rental store,{sret}here in bit island, you only get{sret}betamax.all the walls are covered with{sret}betamax tapes! a man stands behind the{sret}counter.":gosub 6200:return
+975 print "you are inside the video rental store,{sret}here in bit island, you only get{sret}betamax all the walls are covered with{sret}betamax tapes! a man stands behind the{sret}counter.":gosub 6200:return
 980 print "you are inside the pawn shop, you see a{sret}huge pile of junk, everything else{sret}appears to be guns! there's a big bald{sret}man behind the counter.":gosub 6200:return
 985 print "you are in mega cafe, you can buy extra{sret}strong coffee here.{sret}{sret}{gry3}***price list***************************{grn}* coffee ......................... $2.00":gosub 6200:return
 990 print "you are at barron burger, you can buy a{sret}fat barron burger, or a kiddy meal.{sret}{sret}{gry3}***price list***************************{grn}* burger ......................... $4.00* kiddy meal ..................... $4.00":gosub 6200:return
@@ -173,6 +174,7 @@
 997 print "you are at the beach, this is surfer{sret}territory, hanging out here for too{sret}long is dangerous. you can see a{sret}surfer. or is it a troll?":gosub 6200:return
 999 return
 1000 rem ***move around***
+1005 nl=0
 1010 if (wd$(1)="n" or wd$(1)="north") then nl=l%(lc,1)
 1020 if (wd$(1)="s" or wd$(1)="south") then nl=l%(lc,2)
 1030 if (wd$(1)="w" or wd$(1)="west") then nl=l%(lc,3)
@@ -281,9 +283,9 @@
 2220 if lc=18 and ty=1 and wd$(2)="kiddy" and wd$(3)="meal" then print "you can only carry one toy":rf=1
 2230 if lc=18 and bg=0 and ty=0 and wd$(2)="kiddy" and wd$(3)="meal" then print "you buy a burger and a toy":mn=mn-4:bg=1:ty=1:rf=1
 2250 rem videogame
-2260 if lc=19 and mn<25 and wd$(2)="warrior" and wd$(3)="chicken" then 6010:return
-2270 if lc=19 and mn>25 and wd$(2)="warrior" and wd$(3)="chicken" and wc=1 then print "you can only need one.":rf=1
-2280 if lc=19 and mn>25 and wd$(2)="warrior" and wd$(3)="chicken" and wc=0 then mn=mn-25:print "you buy the game! yes!.":wc=1:rf=1
+2260 if lc=19 and mn<25 and wd$(2)="warrior" and wd$(3)="chicken" then gosub 6010:return
+2270 if lc=19 and mn>=25 and wd$(2)="warrior" and wd$(3)="chicken" and wc=1 then print "you can only need one.":rf=1
+2280 if lc=19 and mn>=25 and wd$(2)="warrior" and wd$(3)="chicken" and wc=0 then mn=mn-25:print "you buy the game! yes!.":wc=1:rf=1
 2290 if rf=0 then print "buy what?"
 2300 return 
 2500 rem *** use ***
@@ -388,7 +390,7 @@
 9900 goto 20000
 10000 rem *** knock ***
 10005 rv=0
-10010 if lc=5 or lc=6 or lc=11 or lc=12 and wd$(2)="door" then print "you knock on the shop door, but there's no need. it is open.":rv=1
+10010 if (lc=5 or lc=6 or lc=11 or lc=12) and wd$(2)="door" then print "you knock on the shop door, but there's no need. it is open.":rv=1
 10020 if lc=4 then rv=1:gosub 10100
 10030 if rv=0 then print "you can't knock on that."
 10040 return
