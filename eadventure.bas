@@ -3,7 +3,7 @@
 15 print "{grn}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}*** 8 bit island ***{grn}{sret}"
 20 print "you wake up feeling excited, it is{sret}finally the day! the day that your{sret}freeze64 magazine arrives by mail.{sret}{sret}freeze64 is your favourite video game{sret}magazine. you are dying to read about{sret}warrior chicken, a new game";
 30 print " that{sret}everyone's been talking about. the{sret}game is released today.{sret}{sret}as you get out of bed, you notice a{sret}note left on your bedside table."
-40 print "{sret}type {yel}help{grn} for instructions (v0.9.3)"
+40 print "{sret}type {yel}help{grn} for instructions (v1.0)"
 70 cl=0:wl=0:bs=0:hb=0:mb=0:bk=0:tc=0:rk=0:bt=0:ss=0:ec=0:ty=0:wc=0:fz=0:lc=1:vr=0:wf=1:mn=0:cf=0:sw=0:sr=0:sb=0:sk=0:sl=0:bg=0:sc=0:pw=0:kn=0:bv=0:rl=0:rd=0
 71 dim wd$(10)
 72 dim l%(20,4):l%(1,4)=3:l%(2,1)=3:l%(2,2)=6:l%(3,2)=2:l%(3,3)=1:l%(4,4)=5:l%(5,2)=9:l%(5,3)=4:l%(5,4)=6:l%(6,1)=2:l%(6,2)=10:l%(6,3)=5:l%(6,4)=7:l%(7,3)=6:l%(7,4)=13:l%(9,1)=5:l%(10,1)=6
@@ -60,7 +60,7 @@
 455 if bg=1 then print "a burger":ee=1
 456 if vr=1 then print "a video rental card":ee=1
 457 if rd=1 then print "a radio":ee=1
-458 if mn<>0 then print "$";:print mn;:print "dollars";:ee=1
+458 if mn<>0 then print "$";:print mn;:print " dollars";:ee=1
 459 if ee=0 then print "nothing!";
 460 print " "
 465 return
@@ -74,7 +74,7 @@
 545 if hb=1 and wd$(2)="baguette" then print "a baguette, it is as hard as a bat!":vf=1
 550 if mb=1 and wd$(2)="bottle" and sc=0 then print "an empty milk bottle.":vf=1
 551 if mb=1 and wd$(2)="bottle" and sc=1 then print "the key is now stuck inside it.":vf=1
-552 if mb=1 and wd$(2)="bottle" and sc=2 then print "you sold the sculpture! the bottle is gone.":vf=1
+552 if mb=1 and wd$(2)="bottle" and sc=2 then print "you sold the sculpture!{sret}the bottle is gone.":vf=1
 553 if mb=0 and wd$(2)="bottle" and sb=1 and lc=6 then print "i guess the milkman forgot to take it.":vf=1
 555 if bk=1 and wd$(2)="key" and sc=0 then print "a bent key, looks fairly artistic.":vf=1
 556 if bk=1 and wd$(2)="key" and sc=1 then print "the key is stuck inside the bottle":vf=1
@@ -101,7 +101,7 @@
 652 if lc=2 and wd$(2)="posters" then print "most of the posters are for c64 and{sret}atari games. there's also a poster of{sret}a red car.":vf=1
 655 if lc=3 and wd$(2)="fridge" and bs=0 then print "there's no point in opening this{sret}fridge, there's never anything in it.{sret}{sret}there's a bus ticket under a fridge{sret}magnet. that's where you normally keep{sret}it.":sr=1:vf=1
 657 if lc=3 and wd$(2)="fridge" and bs=1 then print "there's no point in opening this{sret}fridge, there's never anything in it.":vf=1
-660 if lc=3 and wd$(2)="pantry" and wl=0 then print "it's full of cans and other things{sret}you don't need. and your wallet is{sret}there too! your mother keeps telling youthat you are too absent-minded and{sret}you will eventually lose your wallet.":vf=1:sw=1
+660 if lc=3 and wd$(2)="pantry" and wl=0 then print "it's full of cans and other things{sret}you don't need. and your wallet is{sret}there too! your mother keeps telling you{sret}that you are too absent-minded and{sret}you will eventually lose your wallet.":vf=1:sw=1
 662 if lc=3 and wd$(2)="pantry" and wl=1 then print "you don't need anything from the{sret}pantry.":vf=1
 665 if lc=3 and wd$(2)="cooker" then print "last time you used this the fire was{sret}so vast it was headline news.":vf=1
 670 if lc=4 and wd$(2)="door" and bk=0 then print "the door is closed, you can see a key{sret}in the lock.":sk=1:vf=1
@@ -132,7 +132,7 @@
 756 if lc=16 and wd$(2)="guns" and ss=1 then print "they are just guns.":sl=1:vf=1
 760 if lc=16 and wd$(2)="man" then print "he's big, bald, and looks grumpy.":vf=1
 765 if lc=16 and wd$(2)="slingshot" then print "a wooden slingshot, it looks powerful.":vf=1
-766 if lc=16 and rd=0 and wd$(2)="junk" then print "there's a radio amonst the useless{sret}junk.":rl=1:vf=1
+766 if lc=16 and rd=0 and wd$(2)="junk" then print "there's a radio amongst the useless{sret}junk.":rl=1:vf=1
 767 if lc=16 and rd=1 and wd$(2)="junk" then print "it is just junk.":vf=1
 770 if lc=17 and wd$(2)="coffee" then print "you've heard the coffee here is strong.":vf=1
 775 if bg=1 and wd$(2)="burger" then print "it's a big burger in a cardboard box.{sret}it's still a bit warm.":vf=1
@@ -153,7 +153,7 @@
 900 rem ***look at surroundings***
 902 on lc goto 905, 910, 915, 920, 925, 930, 935, 940, 945, 950, 955, 960, 965, 970, 975, 980, 985, 990, 995, 997
 905 print "you are in your bedroom, you can see{sret}your closet, bed, bedside table, and{sret}window.":gosub 6200:return 
-910 print "you are in your small livingroom, there{sret}are videogame posters on the walls. you{sret}can see your 14 inch tv and your comfy{sret}soft sofa, under the tv, there's a c64{sret}and a 2600.":gosub 6200:return
+910 print "you are in your small living room, there{sret}are video game posters on the walls. you{sret}can see your 14 inch tv and your comfy{sret}soft sofa, under the tv, there's a c64{sret}and a 2600.":gosub 6200:return
 915 print "you are standing in your kitchen.{sret}there's a fridge, a cooker, and an{sret}open pantry here.":gosub 6200:return
 920 print "you are standing in front of a bakery.{sret}the door is closed.":gosub 6200:return
 925 print "you are standing in front of the bit{sret}island postal service, to enter{sret}go south.":gosub 6200:return
@@ -166,7 +166,7 @@
 960 print "you are standing in front of the video{sret}rental store, to enter the store, walk{sret}south.":gosub 6200:return
 965 print "you are at the bus stop, the bus{sret}in front of you goes back to your house.{sret}{sret}to take the bus, walk east.":gosub 6200:return
 970 print "you are standing in front of your local{sret}mall, your hangout, where you feel most{sret}comfortable. on the ground, you can see{sret}some rocks. to enter the mall, walk{sret}south.":gosub 6200:return
-975 print "you are inside the video rental store,{sret}here in bit island, you only get{sret}betamax all the walls are covered with{sret}betamax tapes! a man stands behind the{sret}counter.":gosub 6200:return
+975 print "you are inside the video rental store,{sret}here in bit island, you only get{sret}betamax; all the walls are covered with{sret}betamax tapes! a man stands behind the{sret}counter.":gosub 6200:return
 980 print "you are inside the pawn shop, you see a{sret}huge pile of junk, everything else{sret}appears to be guns! there's a big bald{sret}man behind the counter.":gosub 6200:return
 985 print "you are in mega cafe, you can buy extra{sret}strong coffee here.{sret}{sret}{gry3}***price list***************************{grn}* coffee ......................... $2.00":gosub 6200:return
 990 print "you are at barron burger, you can buy a{sret}fat barron burger, or a kiddy meal.{sret}{sret}{gry3}***price list***************************{grn}* burger ......................... $4.00* kiddy meal ..................... $4.00":gosub 6200:return
@@ -211,7 +211,7 @@
 1510 if lc=9 and cl=1 then print "{cyn}you:{grn}did you deliver my freeze64 today?{sret}{sret}{cyn}woman:{grn}we have delivered all packages{sret}for today including your magazine.{sret}{sret}**perhaps your magazine was stolen!**":tf=1
 1520 if lc=10 and cl=1 then print "{cyn}man:{grn}we sell sweets, trading cards,{sret}bubble gum, and magazines. and we are{sret}all out of bubble gum.":gosub 5060:tf=1
 1525 if lc=10 and cl=0 then print "{cyn}man:{grn}out in your pjs again?":tf=1
-1530 if lc=15 and cl=1 then print "{cyn}man:{grn}do you want to rent games of war?":tf=1:gosub 1600
+1530 if lc=15 and cl=1 then print "{cyn}man:{grn}do you want to rent games of war?{sret}y/n":tf=1:gosub 1600
 1535 if lc=15 and cl=0 then print "{cyn}man:{grn}it is pj kid!":tf=1
 1540 if lc=16 and sl=0 and ss=0 then print "{cyn}you:{grn}i'm on a text adventure, i need a{sret}gun!{sret}{sret}{cyn}man:{grn}sorry kid, i'm not selling you a{sret}gun. you can buy anything else, or sell{sret}me something if you need the cash.":gosub 5010:tf=1
 1542 if lc=16 and sl=1 and ss=0 then print "{cyn}you:{grn}i'm on a text adventure, i need {sret}weapons! what about that slingshot?{sret}{sret}{cyn}man:{grn}that old slingshot? i didn't{sret}think anyone would buy it. what do{sret}you want? buying or selling?":gosub 5010:tf=1
@@ -284,7 +284,7 @@
 2230 if lc=18 and bg=0 and ty=0 and wd$(2)="kiddy" and wd$(3)="meal" then print "you buy a burger and a toy":mn=mn-4:bg=1:ty=1:rf=1
 2250 rem videogame
 2260 if lc=19 and mn<25 and wd$(2)="warrior" and wd$(3)="chicken" then gosub 6010:return
-2270 if lc=19 and mn>=25 and wd$(2)="warrior" and wd$(3)="chicken" and wc=1 then print "you can only need one.":rf=1
+2270 if lc=19 and mn>=25 and wd$(2)="warrior" and wd$(3)="chicken" and wc=1 then print "you only need one.":rf=1
 2280 if lc=19 and mn>=25 and wd$(2)="warrior" and wd$(3)="chicken" and wc=0 then mn=mn-25:print "you buy the game! yes!.":wc=1:rf=1
 2290 if rf=0 then print "buy what?"
 2300 return 
@@ -334,7 +334,7 @@
 7010 rv=0
 7020 if lc=16 and wd$(2)="toy" and ty=1 then print "{cyn}man:{grn}you can have $2 for it, this is{sret}quite a rare toy.{sret}{sret}{cyn}you:{grn}ok, i'll take it.":mn=mn+2:ty=0:rv=1
 7030 if lc=16 and wd$(2)="key" and bk=1 then print "{cyn}man:{grn}looks ok, but i've seen better{sret}sculptures than this. you can have $4.{sret}{sret}{cyn}you:{grn}ok! i'll take it!":mn=mn+4:bk=0:rv=1
-7040 if lc=16 and wd$(2)="bottle" and mb=1 then print "{cyn}man:{grn}where did you get that? that{sret}belongs to the milkman.{sret}{sret}{cyn}you:{grn}mmmm...yes, i'm just keeting it{sret}safe for him.":rv=1
+7040 if lc=16 and wd$(2)="bottle" and mb=1 then print "{cyn}man:{grn}where did you get that? that{sret}belongs to the milkman.{sret}{sret}{cyn}you:{grn}mmmm...yes, i'm just keeping it{sret}safe for him.":rv=1
 7050 if lc=16 and wd$(2)="sculpture" and sc=1 then print "{cyn}man:{grn}could it be? could this be the lost piero manzoni sculpture? you can have{sret}$200.00 for it!{sret}{sret}{cyn}you:{grn}i hoped i would get more. ok, i'll take $200, but you owe me a favour.":sc=2:mn=mn+200:rv=1:mb=0:bk=0
 7060 if rv=0 then print "{cyn}man:{grn}i don't want that.{sret}{sret}{cyn}you:{grn}fair enough.":rv=1
 8000 return
@@ -366,15 +366,15 @@
 9625 print "the troll is a{sret}fast runner and quickly catches up.{sret}{sret}the troll grabs you and slams you{sret}against the wall.{sret}{sret}you die.{sret}{sret}ending 3/8 (bad ending)":goto 9800
 9630 print "you grab your trusty wooden slingshot{sret}and a rock and take aim at the troll.{sret}you shoot and it is the perfect shot,{sret}you hit him right between the eyes! the{sret}troll screams in agony and starts{sret}running towards you. you run back{sret}towards the mall but ";
 9632 print "the troll is a{sret}fast runner and quickly catches up.{sret}{sret}as you round the corner and start{sret}running up the stairs to the door, you{sret}drop your game! the troll stops and{sret}takes your warrior chicken cartridge.{sret}{sret}you survived but you lost your game and";
-9633 print "{sret}you didn't recover your stolen freeze64.{sret}ending 4/8 (ok ending)":wk=0:goto 9800
-9640 print "you take your bagette and demand that{sret}the troll gives you back your freeze64.{sret}the trolls laughs and takes a swing at{sret}you, but you block him with the{sret}baguette, the troll's fist smashes into{sret}the rock hard bread. the troll hits the{sret}ground in agony";
+9633 print "{sret}you didn't recover your stolen freeze64.{sret}ending 4/8 (ok ending)":goto 9800
+9640 print "you take your baguette and demand that{sret}the troll gives you back your freeze64.{sret}the troll laughs and takes a swing at{sret}you, but you block him with the{sret}baguette, the troll's fist smashes into{sret}the rock hard bread. the troll hits the{sret}ground in agony";
 9642 print " clenching his right{sret}fist with his left hand and drops{sret}your magazine which you quickly grab{sret}and run. you run as fast as you can{sret}back home with your magazine. your{sret}quest has ended, you survived and you{sret}recovered your magazine.";
 9643 print "{sret}{sret}ending 5/8 (good ending)":fz=1:goto 9800
-9650 print "you take your bagette and demand that{sret}the troll gives you back your freeze64.{sret}the trolls laughs and takes a swing at{sret}you, but you block him with the{sret}bagette, the troll's fist smashing into{sret}the rock hard bread. the troll hits the{sret}ground in agony";
+9650 print "you take your baguette and demand that{sret}the troll gives you back your freeze64.{sret}the troll laughs and takes a swing at{sret}you, but you block him with the{sret}baguette, the troll's fist smashing into{sret}the rock hard bread. the troll hits the{sret}ground in agony";
 9660 print " clenching his right{sret}fist with his left hand and he drops{sret}your magazine which you quickly grab{sret}and run. you run as fast as you can{sret}back home with your magazine. your{sret}quest has ended, you survived and you{sret}recovered your magazine ";
 9670 print "and you have a{sret}great game to play later today, warrior{sret}chicken!{sret}{sret}ending 6/8 (best ending?)":fz=1:goto 9800
 9680 print "you grab your trusty wooden slingshot{sret}and a rock and take aim at the troll.{sret}you shoot and it is the perfect shot,{sret}you hit him right between the eyes! the{sret}troll screams in agony and starts{sret}running towards you. you run back{sret}towards the mall and ";
-9690 print "the troll is a fastrunner but so are you!, the troll tries{sret}to grab you and he just misses you.{sret}{sret}you barely get away.{sret}{sret}ending 7/8 (ok ending)":goto 9800
+9690 print "the troll is a fast runner but so are you!, the troll tries{sret}to grab you and he just misses you.{sret}{sret}you barely get away.{sret}{sret}ending 7/8 (ok ending)":goto 9800
 9700 print "you wake up inside the bakery, then run{sret}towards the door and find that it is{sret}locked. you turn around to see if{sret}there’s another way out and you catch a{sret}glimpse of a clown.{sret}{sret}you die.{sret}{sret}secret (horrific ending)"
 9710 print "{sret}{sret}secret ending achieved!":goto 9800
 9720 print "you plug in your brand new copy of{sret}warrior chicken into your c64. the{sret}game is amazing! you play for hours{sret}and hours, completely forgetting about{sret}your lost freeze64 magazine.{sret}{sret}you have completed your quest!{sret}{sret}ending 8/8 (the gamer ending)":goto 9800
@@ -398,7 +398,7 @@
 10110 if kn=1 and wd$(2)="door" then print "the baker leans out of the window.{sret}{sret}{cyn}baker:{grn}stop knocking!"
 10120 if kn=2 and wd$(2)="door" then print "the baker leans out of the window.{sret}{sret}{cyn}baker:{grn}damn it kid! stop knocking!"
 10130 if kn=3 and wd$(2)="door" then print "the baker leans out of the window.{sret}{sret}{cyn}baker:{grn}bloody hell kid! stop it now!!!"
-10140 if kn=4 and wd$(2)="door" then print "the baker leans out of the window with abaguette and throws it at you.{sret}thanfully,the baguette misses you and{sret}crashes into the ground cracking the{sret}pavement. {sret}{sret}{cyn}baker:{grn} bloody hell kid! stop it now!!!":bv=1
+10140 if kn=4 and wd$(2)="door" then print "the baker leans out of the window with a baguette and throws it at you.{sret}thankfully, the baguette misses you and{sret}crashes into the ground cracking the{sret}pavement. {sret}{sret}{cyn}baker:{grn} bloody hell kid! stop it now!!!":bv=1
 10150 if kn>4 and wd$(2)="door" then print "the baker growls loudly from inside the bakery."
 10160 if kn>15 and wd$(2)="door" then goto 9700
 10165 return
