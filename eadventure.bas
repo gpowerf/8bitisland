@@ -28,7 +28,7 @@
 182 if wd$(1)="help" then gosub 11000:lf=1
 183 if wd$(1)="save" then gosub 12000:lf=1
 184 if wd$(1)="load" then gosub 12100:lf=1
-185 if lf=0 then print "sorry i don't understand."
+185 if lf=0 then print "sorry i don't understand. type help."
 195 goto 80
 200 rem ***word separator***
 210 for i=0 to 10: wd$(i)="": next: wd=1
@@ -159,7 +159,7 @@
 925 print "you are standing in front of the bit{sret}island postal service, to enter{sret}go south.":gosub 6200:return
 930 print "you are outside at the side of the road.{sret}behind you to the north is your house,{sret}in front of you to the south is the{sret}convy mart, there are more shops along{sret}this road.":gosub 6200:return
 935 print "you are at the bus stop, the bus{sret}leaving to the mall is in front of you.{sret}to board the bus, walk east.":gosub 6200:return
-940 print "you are tied up inside the bakery, the{sret}baker has an ax and is dressed like a{sret}clown.":return
+940 print "you are tied up inside the bakery, the{sret}baker has an axe and is dressed like a{sret}clown.":return
 945 print "you are in the postal service office. a{sret}woman stands behind the counter.":gosub 6200:return
 950 print "you are in the convy mart, magazines,{sret}bubble gum, sweets, and trading{sret}cards are sold here. a man stands{sret}behind the counter.":gosub 6200:return
 955 print "you are standing in front of the local{sret}pawn shop, there are rumours that all{sret}sorts of weapons can be bought here.{sret}walk south to enter the pawn shop.":gosub 6200:return
@@ -322,7 +322,7 @@
 5110 return
 6000 rem *** money messages ***
 6010 print "you don't have enough money":return
-6200 rem *** exists ***
+6200 rem *** exits ***
 6210 print "{sret}{sret}exits to the: ";
 6220 if l%(lc,1)<>0 then print "{lred}north ";
 6230 if l%(lc,2)<>0 then print "{lgrn}south ";
@@ -375,7 +375,7 @@
 9670 print "and you have a{sret}great game to play later today, warrior{sret}chicken!{sret}{sret}ending 6/8 (best ending?)":fz=1:goto 9800
 9680 print "you grab your trusty wooden slingshot{sret}and a rock and take aim at the troll.{sret}you shoot and it is the perfect shot,{sret}you hit him right between the eyes! the{sret}troll screams in agony and starts{sret}running towards you. you run back{sret}towards the mall and ";
 9690 print "the troll is a fast runner but so are you!, the troll tries{sret}to grab you and he just misses you.{sret}{sret}you barely get away.{sret}{sret}ending 7/8 (ok ending)":goto 9800
-9700 print "you wake up inside the bakery, then run{sret}towards the door and find that it is{sret}locked. you turn around to see if{sret}there’s another way out and you catch a{sret}glimpse of a clown.{sret}{sret}you die.{sret}{sret}secret (horrific ending)"
+9700 print "you wake up inside the bakery, then run{sret}towards the door and find that it is{sret}locked. you turn around to see if{sret}there's another way out and you catch a{sret}glimpse of a clown.{sret}{sret}you die.{sret}{sret}secret (horrific ending)"
 9710 print "{sret}{sret}secret ending achieved!":goto 9800
 9720 print "you plug in your brand new copy of{sret}warrior chicken into your c64. the{sret}game is amazing! you play for hours{sret}and hours, completely forgetting about{sret}your lost freeze64 magazine.{sret}{sret}you have completed your quest!{sret}{sret}ending 8/8 (the gamer ending)":goto 9800
 9800 print "{sret}score:";:print int((mn/40)+cl+wl+bs+hb+mb+bk+tc+rk+bt+ss+ec+ty+wc+(fz*20)+vr+sw+sr+sb+sk+sl+bg+sc+pw+kn+bv)
