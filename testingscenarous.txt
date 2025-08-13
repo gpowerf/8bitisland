@@ -3,7 +3,7 @@
 =================================
 
 Author: Guillermo Power
-Version: v0.9.3
+Version: v1
 Format: Plain Text
 Use: Playtesting + GitHub upload
 
@@ -119,4 +119,51 @@ NEGATIVE & EDGE CASE TESTING
   - Use nonsensical but valid commands: "kill bed", "use north", "sell house".
   - Verify the game responds with appropriate "I can't do that" messages.
 
-Happy adventuring!
+-----------------------------------------
+-------- VARIABLE DICTIONARY ----------
+-----------------------------------------
+--- PLAYER INVENTORY FLAGS (1=HAS ITEM) ---
+wl - wallet
+bs - bus ticket
+hb - hard baguette
+mb - milk bottle
+bk - bent key
+tc - trading cards
+rk - rocks
+bt - betamax tape
+ss - slingshot
+ec - extra strong coffee
+ty - toy from kiddy meal
+wc - warrior chicken game
+fz - freeze64 magazine
+vr - video rental card
+bg - burger
+rd - radio
+mn - money amount
+
+--- GAME STATE & PUZZLE FLAGS ---
+lc - current location code
+cl - clothes changed (1=yes)
+wf - wallet full (1=yes, 0=empty)
+cf - closet open (1=yes, 0=closed)
+pw - power-up active (from coffee)
+kn - knock counter for bakery
+bv - baguette visible at bakery
+sc - sculpture status (0=no, 1=made, 2=sold)
+
+--- "SAW ITEM" FLAGS (PLAYER HAS NOTICED ITEM) ---
+sw - saw wallet in pantry
+sr - saw bus ticket on fridge
+sb - saw bottle at convy mart
+sk - saw key in bakery door
+sl - slingshot in pawn shop
+rl - saw radio in pawn shop junk
+
+--- SYSTEM & TEMPORARY VARIABLES ---
+l%(20,4) - location exit data (N,S,W,E)
+wd$(10)  - holds words from user input
+a$       - raw user input string
+lf       - "logic found" flag in main loop
+ee,vf,tf - temporary flags in subroutines
+rf,rv    - temporary flags in subroutines
+------------------------------------------
