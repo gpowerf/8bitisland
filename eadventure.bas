@@ -405,7 +405,7 @@
 11000 rem *** help ***
 11010 print "{clr}"
 11020 print "{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}help"
-11030 print "{sret}{lgrn}common verbs:{grn}look, get, talk, use, buy, sell, kill, go, knock, examine"
+11030 print "{sret}{lgrn}common verbs:{grn}look, get, talk, use, buy, sell, kill, go, knock, examine, save,{sret}load"
 11040 print "{sret}{lgrn}common prepositions:{grn}with"
 11050 print "{sret}{lgrn}sentences:{grn}the basic sentence is as{sret}follows:{sret}{sret}[verb][subject]"
 11060 print "{sret}{lgrn}complex sentences:{grn}the game's natural{sret}language processing logic running on{sret}the mighty c64 is capable of{sret}understanding more. for example:"
